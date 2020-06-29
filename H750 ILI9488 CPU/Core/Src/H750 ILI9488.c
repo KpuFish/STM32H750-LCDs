@@ -558,14 +558,10 @@ void LCD_draw_v_line(uint16_t x1, uint16_t y1, uint16_t y2 ,uint16_t color)
 
 void LCD_draw_rectangle(uint16_t x1, uint16_t y1, uint16_t x2, uint16_t y2, uint16_t color)
 {
-  //LCD_draw_line(x1,y1,x1,y2,color);
-  //LCD_draw_line(x1,y2,x2,y2,color);
-  //LCD_draw_line(x2,y2,x2,y1,color);
-  //LCD_draw_line(x2,y1,x1,y1,color);
-  LCD_draw_v_line(x1,y1,y2,color);
-  LCD_draw_h_line(x1,y2,x2,color);
-  LCD_draw_v_line(x2,y2,y1,color);
-  LCD_draw_h_line(x2,y1,x1,color);
+  LCD_draw_line(x1,y1,x1,y2,color);
+  LCD_draw_line(x1,y2,x2,y2,color);
+  LCD_draw_line(x2,y2,x2,y1,color);
+  LCD_draw_line(x2,y1,x1,y1,color);
 }
 
 void LCD_draw_circle(uint16_t x, uint16_t y, uint16_t radian, uint16_t color)

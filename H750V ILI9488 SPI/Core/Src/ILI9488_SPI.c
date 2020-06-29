@@ -535,10 +535,10 @@ void ILI9488_Draw_line(uint16_t x1, uint16_t y1, uint16_t x2, uint16_t y2,uint16
 
 void ILI9488_Draw_Rectangle(uint16_t x1, uint16_t y1, uint16_t x2, uint16_t y2, uint16_t color)
 {
-	ILI9488_Draw_Vertical_Line(x1,y1,y2,color);
-  ILI9488_Draw_Horizontal_Line(x1,y2,x2,color);
-  ILI9488_Draw_Vertical_Line(x2,y2,y1,color);
-  ILI9488_Draw_Horizontal_Line(x2,y1,x1,color);
+  ILI9488_Draw_line(x1,y1,x1,y2,color);
+  ILI9488_Draw_line(x1,y2,x2,y2,color);
+  ILI9488_Draw_line(x2,y2,x2,y1,color);
+  ILI9488_Draw_line(x2,y1,x1,y1,color);
 }
 
 void ILI9488_Draw_Circle(uint16_t x, uint16_t y, uint16_t radian, uint16_t color)
