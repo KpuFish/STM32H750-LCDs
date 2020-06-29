@@ -1,0 +1,11 @@
+FMC LCD 설정시 주의사항
+- 0xC0000000 이하의 주소에 대해 STM32H7xx 는 Address와 Data 버스가 Muxed 장치로 엑세스하여
+  한 주소를 여러 번에 걸쳐 리드, 라이트하므로 LCD가 제대로 동작하지 못한다.
+  원래 NOR/SRAM 맵핑 주소인 0x60000000을 SDRAM영역인 0xC0000000으로
+  리맵핑하면 제대로 동작한다.
+  CubeMX설정할 때 FMC -> Bank Mapping 에서 "NOR/PSRAM bank and SDRAM bank 1/ bank2 are swapped" 를 선택한다.
+
+한글 출력
+- 한글 인코딩은 UTF-8로 되어 있으므로 한글을 출력할 경우 에디터의 설정을 UTF-8로 하여야 한다.
+- 한글 출력 부분은 영문 전용 출력루틴과 별개로 한글 크기 16x16, 영문 크기 8x16으로 구현해 놓았다.
+-
